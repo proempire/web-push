@@ -1,0 +1,20 @@
+{
+  "name": "push-messaging-and-notifications",
+  "version": "1.0.0",
+  "description": "no",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "empire",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "request": "^2.83.0",
+    "request-promise-native": "^1.0.5",
+    "web-push": "^3.2.5"
+  }
+}
