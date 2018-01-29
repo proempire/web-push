@@ -2,7 +2,7 @@
 * @Author: Marte
 * @Date:   2018-01-17 10:11:14
 * @Last Modified by:   Marte
-* @Last Modified time: 2018-01-25 00:16:51
+* @Last Modified time: 2018-01-25 10:46:51
 */
 
 'use strict';
@@ -33,7 +33,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.post('/store', function(req, res) {
     // console.log(typeof(req.body))
-    console.log(req.body);
+    // console.log(req.body);
     let subscriptionStr = Object.keys(req.body)[0]
     let subscription = JSON.parse(subscriptionStr)
     // console.log(subscription);
@@ -46,14 +46,15 @@ app.post('/store', function(req, res) {
 
     webpush.setGCMAPIKey('AAAAQQeCt9M:APA91bH_jzQ37ym5hBklh7Q_jU25a1aZlZoHHpu3PsJV7EkmqF6JKBKVN-BAflkDxBgqTDTY0Ms9V97sNJzL4ie_RpvmFiDBmWHiVbdulQP00L10grghF-GbvhKSGPeKCE_jetekjk86');
     webpush.setVapidDetails(
-      'mailto:web-push-book@gauntface.com',
+      'mailto:1048155766@qq.com',
       vapidKeys.publicKey,
       vapidKeys.privateKey
     )
 
     delete subscription['expirationTime']
-    console.log(subscription)
+    // console.log(subscription)
 
+    console.log(webpush.generateRequestDetails(subscription))
     webpush.sendNotification(subscription).then((data) => {
         console.log('haha')
     }).catch((err) => {

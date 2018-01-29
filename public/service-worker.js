@@ -25,6 +25,7 @@ self.addEventListener('notificationclick', function(event) {
 
   // This looks to see if the current is already open and
   // focuses if it is
+  // client为service worker执行的作用域，可以是document也可以是shareWorker
   event.waitUntil(clients.matchAll({
     type: 'window'
   }).then(function(clientList) {
